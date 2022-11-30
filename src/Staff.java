@@ -15,7 +15,13 @@ public class Staff {
         if (checkDeparmentValue(department)) {
             this.department = department;
         }
-        this.salary = salary;
+        if ((checkSalaryArgument(salary))) {
+            this.salary = salary;
+        }
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -56,8 +62,17 @@ public class Staff {
         return true;
     }
 
+    private boolean checkSalaryArgument(double salary) {
+        if (salary < 0) {
+            throw new IllegalArgumentException("Salary should be positive");
+        }
+        return true;
+    }
+
     public void setSalary(double salary) {
-        this.salary = salary;
+        if (checkSalaryArgument(salary)) {
+            this.salary = salary;
+        }
     }
 
     public static void setCount(int count) {

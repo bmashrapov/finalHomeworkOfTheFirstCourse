@@ -2,7 +2,7 @@ public class StaffService {
     public static Staff[] staff = new Staff[10];
 
     public static void printAll(Staff[] staff) {
-        //if (checkAllElementsIsNotNull(staff))
+
         for (Staff i : staff) {
             if (i != null) {
                 System.out.println(i);
